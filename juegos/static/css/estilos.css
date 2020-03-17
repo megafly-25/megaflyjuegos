@@ -1,0 +1,33 @@
+.navbar {
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 05);
+    min-height: 100px;
+}
+
+.logo-brand {
+    min-width: 10%;
+    max-width: 40%;
+}
+
+.navbar-brand {
+    max-width: 50%;
+    min-width: 10%;
+}
+
+@media only screen and(min-width:768px) and (max-width:991px) {
+    .dropdown-mobile {
+        width: 30%;
+    }
+}
+
+@media only screen and(max-width:767px) {
+    .dropdown-mobile {
+        width: 30%;
+    }
+}
+
+@media only screen and(max-width:367px) {
+    .dropdown-mobile {
+        width: 30%;
+    }
+}

@@ -1,0 +1,9 @@
+{% extends "main.html" %}
+{% load static%}
+{% block estilos %} 
+<link rel="stylesheet" href="{% static 'css/estilos404.css' %}">
+{% endblock estilos %}
+{% block error %}
+    <img class="img404" src="{% static 'imagenes/404megaflyjuegos.png' %}">
+    <a href="{% url 'principal'%}" class="btn btn-danger btn-lg ml-4"><i class="fa fa-home"> Regrese a descargar los mejores juegos</i></a>  
+{% endblock error %}
