@@ -5,6 +5,15 @@ from django.utils.text import slugify
 from django_matplotlib import MatplotlibFigureField
 from django.urls import reverse
 # Create your models here.
+
+YEARS=[]
+for r in range(1980, (datetime.now().year+1)):
+    YEARS.append((r,r))
+REQUISITOS=(
+    ("Requisitos Bajos","Requisitos Bajos"),
+    ("Requisitos Medios","Requisitos Medios"),
+    ("Requisitos Altos","Requisitos Altos"),
+)
 class User(models.Model):
     nombre=models.CharField(max_length=100)
     apellido=models.CharField(max_length=100)
@@ -13,12 +22,17 @@ class User(models.Model):
     
     def __str__(self):
         return self.nombre
-class requisitos_completo(models.Model):
+class requisitos_completos(models.Model):
     CPU=models.CharField(max_length=150)
     RAM=models.CharField(max_length=150)
     Targeta_Grafica=models.CharField(max_length=150)
     SO=models.CharField(max_length=50)
     Memoria_disk=models.CharField(max_length=100)
+    CPU_recomendado=models.CharField(max_length=150,null=True,blank=True)
+    RAM_recomendado=models.CharField(max_length=15,null=True,blank=True)
+    Targeta_Grafica_recomendado=models.CharField(max_length=150,null=True,blank=True)
+    SO_recomendado=models.CharField(max_length=50,null=True,blank=True)
+    Memoria_disk_recomendado=models.CharField(max_length=100,null=True,blank=True)
     def __str__(self):
         return self.CPU,self.RAM,self.Memoria_disk
 class cate_Jueg(models.Model):
@@ -41,9 +55,9 @@ class mega_juego(models.Model):
         fecha_registro=models.DateField(verbose_name="Fecha Registro")
         descripcion=models.CharField(max_length=500,verbose_name="Descripcion")
         descri_abre=models.CharField(max_length=100,verbose_name="Descripcion Abreviada")
-        anio_estreno=models.DateField(max_length=4,verbose_name="Requisitos",null=True, blank=True)
-        requisitos=models.CharField(max_length=50,verbose_name="Requisitos",null=True, blank=True)
-        requisitos_completo=models.ForeignKey(requisitos_completo,on_delete=models.CASCADE,verbose_name="Requisitos Completos",null=True,blank=True)
+        anio_estreno=models.IntegerField(max_length=4, choices=YEARS,verbose_name="Año de Estreno",null=True, blank=True,default=datetime.now().year)
+        requisitos=models.CharField(max_length=50,verbose_name="Requisitos",null=True, blank=True,choices=REQUISITOS,default=REQUISITOS[0])
+        requisitos_completo=models.ForeignKey(requisitos_completos,on_delete=models.CASCADE,verbose_name="Requisitos Completos",null=True,blank=True)
         enlacegd=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive")
         enlacegd2=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 2")
         enlacegd3=models.CharField(max_length=250,blank=True,verbose_name="Enlace Google Drive 3")
