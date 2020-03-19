@@ -7,9 +7,8 @@ from django.http import Http404
 # Create your views here.
 def mi_error_404(request,exception):
     return page_not_found(request,exception,template_name="404.html")
-
-#def sitemap(request):
-#        return render(request,"sitemap.xml",content_type="application/xhtml+xml")   
+def sitemap(request):
+    return render(request,"sitemap.xml",content_type="application/xhtml+xml")   
 def principal(request):
     categorias=cate_Jueg.objects.get_queryset().order_by('id')
     productos=mega_juego.objects.get_queryset().order_by('id')
