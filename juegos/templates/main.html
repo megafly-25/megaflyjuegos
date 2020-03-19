@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
+    {% block head%}
+    {% endblock head%}
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <!--<meta name="google-site-verification" content="7QuQk1wx7T0Pn89sYmD0AzzNi2x-Aa53RCTHFeAxGvQ" />
+    <meta name="google-site-verification" content="7QuQk1wx7T0Pn89sYmD0AzzNi2x-Aa53RCTHFeAxGvQ" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <base href="https://www.megafly.ga/" target="_self">
     <title>{% block title %}Megafly{% endblock title %}</title>
@@ -30,7 +32,7 @@
     <link rel="next" href="https://megafly.ga/page/2/">
     <meta property="og:locale" content="es_PE">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.megafly.ga/">-->
+    <meta property="og:url" content="https://www.megafly.ga/">
     {% load static%} 
     {% block estilos %}
     {% endblock estilos %}
