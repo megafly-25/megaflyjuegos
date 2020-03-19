@@ -9,9 +9,9 @@
   <h5 class="card-header">{{productos.nombre}}</h5>
   <div class="card-body mb-4">
     <div class="imagenes mb-4">
-    <img class="ml-4 mr-4" src="{{productos.imagen.url}}" alt="{{p.nombre}}" style="width:300px;height:300px;">
-    <img class="ml-4 mr-4" src="{{productos.imagen2.url}}" alt="{{p.nombre}}" style="width:300px;height:300px;">
-    <img class="ml-4 mr-4" src="{{productos.imagen3.url}}" alt="{{p.nombre}}" style="width:300px;height:300px;">
+    <img class="ml-4 mr-4" src="{{productos.imagen.url}}" alt="{{productos.nombre}}" style="width:300px;height:300px;">
+    <img class="ml-4 mr-4" src="{{productos.imagen2.url}}" alt="{{productos.nombre}}" style="width:300px;height:300px;">
+    <img class="ml-4 mr-4" src="{{productos.imagen3.url}}" alt="{{productos.nombre}}" style="width:300px;height:300px;">
     </div>
     <p class="card-text text-justify">{{productos.descripcion}}</p>
     <a href="#collapseExample" class="btn btn-success" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fab fa-google-drive"></i> Enlace en Google Drive</a>
@@ -32,6 +32,39 @@
       </div>
     </div><br><br>
     <p class="card-text text-justify">Generos: {{productos.categoria_pro.all|join:', '}}</p>
+    <div class="card">
+  <div class="card-header">
+   <h5>Requisitos Para Instalar el Juegos</h5>
+  </div>
+  <div class="card-body">
+    <div class="row">
+     <div class="col-6">
+        <blockquote class="blockquote mb-0">
+          <h5>Requisitos Minimos</h5>
+          <ul style="list-style:none;">
+            <li>CPU: {{productos.requisitos_completo.CPU}}</li>
+            <li>Memoria Ram: {{productos.requisitos_completo.RAM}}</li>
+            <li>Tarjeta Grafica: {{productos.requisitos_completo.Targeta_Grafica}}</li>
+            <li>Sistema Operativo: {{productos.requisitos_completo.SO}}</li>
+            <li>Memoria en disco: {{productos.requisitos_completo.Memoria_disk}}</li>  
+          </ul>
+        </blockquote>
+      </div>
+       <div class="col-6">
+        <blockquote class="blockquote mb-0">
+         <h5>Requisitos Recomendados</h5>
+          <ul style="list-style:none;">
+           <li>CPU: {{productos.requisitos_completo.CPU_recomendado}}</li>
+            <li>Memoria Ram: {{productos.requisitos_completo.RAM_recomendado}}</li>
+            <li>Tarjeta Grafica: {{productos.requisitos_completo.Targeta_Grafica_recomendado}}</li>
+            <li>Sistema Operativo: {{productos.requisitos_completo.SO_recomendado}}</li>
+            <li>Memoria en disco: {{productos.requisitos_completo.Memoria_disk_recomendado}}</li>
+          </ul>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>
   </div>
 </div>
 </div>

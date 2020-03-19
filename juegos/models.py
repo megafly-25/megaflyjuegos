@@ -7,12 +7,12 @@ from django.urls import reverse
 # Create your models here.
 
 YEARS=[]
-for r in range(1980, (datetime.now().year+1)):
+for r in range(1990, (datetime.now().year+1)):
     YEARS.append((r,r))
 REQUISITOS=(
-    ("Requisitos Bajos","Requisitos Bajos"),
-    ("Requisitos Medios","Requisitos Medios"),
-    ("Requisitos Altos","Requisitos Altos"),
+    ("Requisitos-Bajos","Requisitos Bajos"),
+    ("Requisitos-Medios","Requisitos Medios"),
+    ("Requisitos-Altos","Requisitos Altos"),
 )
 class User(models.Model):
     nombre=models.CharField(max_length=100)
@@ -34,17 +34,17 @@ class requisitos_completos(models.Model):
     SO_recomendado=models.CharField(max_length=50,null=True,blank=True)
     Memoria_disk_recomendado=models.CharField(max_length=100,null=True,blank=True)
     def __str__(self):
-        return self.CPU,self.RAM,self.Memoria_disk
+        return self.CPU
 class cate_Jueg(models.Model):
     nombre=models.CharField(max_length=100)
     slug2=models.SlugField(null=True,blank=True)
     def __str__(self):
         return self.nombre
-def slug_generator(sender,instance,*args,**kwargs):
+def slug_generator2(sender,instance,*args,**kwargs):
     if instance.slug2:
         return
     instance.slug2=slugify(instance.nombre)
-pre_save.connect(slug_generator,sender=cate_Jueg)
+pre_save.connect(slug_generator2,sender=cate_Jueg)
 class cate_serv(models.Model):
     nombre=models.CharField(max_length=100)
     def __str__(self):
@@ -77,7 +77,7 @@ class mega_juego(models.Model):
         imagen3=models.ImageField()
         def __str__(self):
             return self.nombre
-def slug_generator2(sender,instance,*args,**kwargs):
+def slug_generator(sender,instance,*args,**kwargs):
     if instance.slug:
         return
     instance.slug=slugify(instance.nombre)

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User,Group
-from .models import mega_juego,cate_Jueg
+from .models import mega_juego,cate_Jueg,requisitos_completos
 from django.core.paginator import Paginator
 from django.views.defaults import page_not_found
 from django.http import Http404
@@ -23,7 +23,7 @@ def principal(request):
     return render(request,"principal.html",data)
 def juego(request, slug):
     categorias=cate_Jueg.objects.get_queryset().order_by('id')
-    #productos=produc_fer.objects.filter(slug=slug)
+    #productos=mega_juego.objects.filter(slug=slug)
     productos=get_object_or_404(mega_juego, slug=slug)
     data={
         'productos':productos,
@@ -42,6 +42,36 @@ def categoria(request,slug):
             'categorias':categorias,    
         }
         return render(request,"Categoria.html",data)
+    else:
+        return redirect('principal')
+
+def anio(request,anio_estreno):
+    categorias=cate_Jueg.objects.get_queryset().order_by('id')
+    productos=mega_juego.objects.filter(anio_estreno=anio_estreno)
+    if productos.exists():
+        paginator=Paginator(productos,30)
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        data={
+            'page_obj':page_obj,
+            'categorias':categorias,
+        }
+        return render(request,"anio.html",data)
+    else:
+        return redirect('principal')
+
+def requisitos(request,requisitos):
+    categorias=cate_Jueg.objects.get_queryset().order_by('id')
+    productos=mega_juego.objects.filter(requisitos=requisitos)
+    if productos.exists():
+        paginator=Paginator(productos,30)
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        data={
+            'page_obj':page_obj,
+            'categorias':categorias,
+        }
+        return render(request,"requisitos.html",data)
     else:
         return redirect('principal')
         

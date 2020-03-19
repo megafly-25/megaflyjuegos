@@ -38,9 +38,9 @@
             Por Requisitos
         </button>
         <div class="dropdown-menu " aria-labelledby="Requisitos_Juegos">
-            <a class="dropdown-item" href="#">Requisitos Bajos</a>
-            <a class="dropdown-item" href="#">Requisitos Medios</a>
-            <a class="dropdown-item" href="#">Requisitos Altos</a>
+            <a class="dropdown-item" href="{% url 'requisitos' 'Requisitos Bajos' %}">Requisitos Bajos</a>
+            <a class="dropdown-item" href="{% url 'requisitos' 'Requisitos Medios' %}">Requisitos Medios</a>
+            <a class="dropdown-item" href="{% url 'requisitos' 'Requisitos Altos' %}">Requisitos Altos</a>
         </div>
         </div>
         <div class="dropdown ">
@@ -51,31 +51,42 @@
             <div class="container container-sm">
             <div class="row">
                 <div class="col-sm-4 p-0">
-                    <a class="dropdown-item" href="#">2000</a>
-                    <a class="dropdown-item" href="#">2001</a>
-                    <a class="dropdown-item" href="#">2002</a>
-                    <a class="dropdown-item" href="#">2003</a>
-                    <a class="dropdown-item" href="#">2004</a>
-                    <a class="dropdown-item" href="#">2005</a>
-                    <a class="dropdown-item" href="#">2006</a>
-                    <a class="dropdown-item" href="#">2007</a>
-                    <a class="dropdown-item" href="#">2008</a>
+                    <a class="dropdown-item" href="{% url 'anio' 1990 %}">1990</a>
+                    <a class="dropdown-item" href="{% url 'anio' 1991 %}">1991</a>
+                    <a class="dropdown-item" href="{% url 'anio' 1992 %}">1992</a>
+                    <a class="dropdown-item" href="{% url 'anio' 1993 %}">1993</a>
+                    <a class="dropdown-item" href="{% url 'anio' 1994 %}">1994</a>
+                    <a class="dropdown-item" href="{% url 'anio' 1995 %}">1995</a>
+                    <a class="dropdown-item" href="{% url 'anio' 1996 %}">1996</a>
+                    <a class="dropdown-item" href="{% url 'anio' 1997 %}">1997</a>
+                    <a class="dropdown-item" href="{% url 'anio' 1998 %}">1998</a>
+                    <a class="dropdown-item" href="{% url 'anio' 1999 %}">1999</a>
+                </div>
+                 <div class="col-sm-4 p-0">
+                   
+                    <a class="dropdown-item" href="{% url 'anio' 2000 %}">2000</a>
+                    <a class="dropdown-item" href="{% url 'anio' 2001 %}">2001</a>
+                    <a class="dropdown-item" href="{% url 'anio' 2002 %}">2002</a>
+                    <a class="dropdown-item" href="{% url 'anio' 2003 %}">2003</a>
+                    <a class="dropdown-item" href="{% url 'anio' 2004 %}">2004</a>
+                    <a class="dropdown-item" href="{% url 'anio' 2005 %}">2005</a>
+                    <a class="dropdown-item" href="{% url 'anio' 2006 %}">2006</a>
+                    <a class="dropdown-item" href="{% url 'anio' 2007 %}">2007</a>
+                    <a class="dropdown-item" href="{% url 'anio' 2008 %}">2008</a>
+                    <a class="dropdown-item" href="{% url 'anio' 2009 %}">2009</a>
                 </div>
                 <div class="col-sm-4 p-0">
-                    <a class="dropdown-item" href="#">2009</a>
-                    <a class="dropdown-item" href="#">2010</a>
-                    <a class="dropdown-item" href="#">2011</a>
-                    <a class="dropdown-item" href="#">2012</a>
-                    <a class="dropdown-item" href="#">2013</a>
-                    <a class="dropdown-item" href="#">2014</a>
-                    <a class="dropdown-item" href="#">2015</a>
-                    <a class="dropdown-item" href="#">2016</a>
-                </div>
-                <div class="col-sm-4 p-0">
-                    <a class="dropdown-item" href="#">2017</a>
-                    <a class="dropdown-item" href="#">2018</a>
-                    <a class="dropdown-item" href="#">2019</a>
-                    <a class="dropdown-item" href="#">2020</a>
+                   <a class="dropdown-item" href="{% url 'anio' 2010 %}">2010</a>
+                   <a class="dropdown-item" href="{% url 'anio' 2011 %}">2011</a>
+                   <a class="dropdown-item" href="{% url 'anio' 2012 %}">2012</a>
+                   <a class="dropdown-item" href="{% url 'anio' 2013 %}">2013</a>
+                   <a class="dropdown-item" href="{% url 'anio' 2014 %}">2014</a>
+                   <a class="dropdown-item" href="{% url 'anio' 2015 %}">2015</a>
+                   <a class="dropdown-item" href="{% url 'anio' 2016 %}">2016</a>
+                   <a class="dropdown-item" href="{% url 'anio' 2017 %}">2017</a>
+                   <a class="dropdown-item" href="{% url 'anio' 2018 %}">2018</a>
+                   <a class="dropdown-item" href="{% url 'anio' 2019 %}">2019</a>
+                   <a class="dropdown-item" href="{% url 'anio' 2020 %}">2020</a>
                 </div>
         </div>
         </div>
