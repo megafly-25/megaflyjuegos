@@ -1,0 +1,3 @@
+Sitemap: http://www.megafly.ga/sitemap.xml
+User-agent:*
+Disallow:

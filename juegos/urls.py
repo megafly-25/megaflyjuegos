@@ -1,6 +1,6 @@
 from django.urls import path
 from django.conf.urls import handler404
-from .views import mi_error_404, principal, juego,categoria,anio,requisitos
+from .views import mi_error_404, principal, juego,categoria,anio,requisitos,sitemap,robots
 
 urlpatterns = [
     path('',principal,name="principal"),
@@ -8,7 +8,8 @@ urlpatterns = [
     path('categoria/<slug>',categoria,name="categoria"),
     path('juegos-por-año/<anio_estreno>',anio,name="anio"),
     path('juegos-por-recursos/<requisitos>',requisitos,name="requisitos"),
-    #path('sitemap.xlm',sitemap),
+    path('robots.txt',robots),
+    path('sitemap.xml',sitemap),
 
 
 ]
